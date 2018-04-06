@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title>자동 랜덤댓글 애드온</title>
+	<description>
+	선택한 게시판에 등록된 글에 댓글을 랜덤하게 작성해주는 애드온입니다. 키스투엑스이님의 자동 댓글달기 애드온을 참조하였습니다.
+	</description>
+	<version>1.0.3</version>
+	<date>2017-07-25</date>
+	<license link="http://opensource.org/licenses/eclipse-1.0.php">Eclipse Public License(EPL)</license>
+	<author email_address="hoons1994@naver.com" link="http://hoonstudy.com">
+		<name xml:lang="ko">charmingcolor</name>
+	</author>
+<extra_vars>
+		<var name="use_addon" type="select">
+			<title>애드온 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+			<description>
+			사용함 - 해당 애드온을 사용합니다. 
+			사용 안 함 - 해당 애드온을 사용하지 않습니다.
+			</description>
+		</var>
+		<var name="member_srl" type="text" default="0">
+			<title>댓글 작성 계정의 member_srl</title>
+			<description>
+			댓글 작성 계정의 member_srl을 입력해주세요.  
+			공란으로 둘 시, member_srl이 0인 가상의 유저를 만듭니다. (회원목록에는 조회 되지 않습니다.)
+			댓글 작성 계정을 지정하면, 작성한 댓글 등에서 프로필사진, 회원정보 등을 설정이 가능합니다.
+			댓글 작성 계정의 프로필사진 등을 설정하시면 댓글이 작성될 때 설정해둔 프로필사진과 회원정보로 나옵니다.
+			</description>
+		</var>
+		<var name="nick_name" type="text">
+			<title>댓글 작성 계정의 닉네임</title>
+			<description>
+			member_srl을 입력할 경우 입력할 필요 없습니다.
+			member_srl을 입력하지 않을 경우 비회원으로 작성하기 때문에 댓글 작성 계정의 닉네임을 지정해야 합니다.
+			</description>
+		</var>
+		<var name="is_admin" type="select">
+			<title>관리자 포함 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+			<description>
+			사용함 - 최고 관리자의 글에도 댓글이 달립니다.
+			사용 안 함 - 회원들의 글에만 댓글이 달립니다.
+			</description>
+		</var>
+		<var name="cm1_use" type="select">
+			<title>댓글 내용1 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment1" type="text">
+			<title>댓글 내용1</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm2_use" type="select">
+			<title>댓글 내용2 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment2" type="text">
+			<title>댓글 내용2</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm3_use" type="select">
+			<title>댓글 내용3 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment3" type="text">
+			<title>댓글 내용3</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm4_use" type="select">
+			<title>댓글 내용4 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment4" type="text">
+			<title>댓글 내용4</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm5_use" type="select">
+			<title>댓글 내용5 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment5" type="text">
+			<title>댓글 내용5</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm6_use" type="select">
+			<title>댓글 내용6 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment6" type="text">
+			<title>댓글 내용6</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm7_use" type="select">
+			<title>댓글 내용7 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment7" type="text">
+			<title>댓글 내용7</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm8_use" type="select">
+			<title>댓글 내용8 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment8" type="text">
+			<title>댓글 내용8</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm9_use" type="select">
+			<title>댓글 내용9 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment9" type="text">
+			<title>댓글 내용9</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+		<var name="cm10_use" type="select">
+			<title>댓글 내용10 사용 여부</title>
+			<options value="N">
+				<title>사용 안 함</title>
+			</options>
+			<options value="Y">
+				<title>사용함</title>
+			</options>
+		</var>
+		<var name="comment_ment10" type="text">
+			<title>댓글 내용10</title>
+			<description>
+			작성될 댓글의 내용을 작성합니다.
+			</description>
+		</var>
+	</extra_vars>
+</addon>
